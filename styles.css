@@ -1,0 +1,576 @@
+/* global */
+
+html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    display: flex;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #1d1f1e;
+    font-family: "Open Sans", sans-serif;
+    color: #ecf0ef;
+    font-size: 16px;
+  }
+  
+  input {
+    height: 40px;
+    background-color: #f2f3f7;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    min-width: 256px;
+  }
+  
+  button {
+    font-size: 16px;
+    transition: transform 0.1s ease-in-out;
+  }
+  
+  button:active {
+    transform: scale(0.95);
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  /* animations */
+  
+  @keyframes fadeInAnimation {
+    0% {
+      opacity: 0;
+      transform: translate3d(0, -20px, 0);
+    }
+    100% {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  .show-on-scroll {
+    animation-name: fadeInAnimation;
+    animation-duration: 2s; /* You can adjust the duration as needed */
+  }
+  
+  /* navbar */
+  
+  .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: #0f1213;
+    color: #ecf0ef;
+  }
+  
+  /* hero */
+  
+  .heroWrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #0f1213;
+  }
+  
+  .hero {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: calc(100% - 80px);
+    max-width: 1310px;
+    min-height: calc(95vh - 40px);
+    animation-name: fadeInAnimation;
+    margin-top: 50px;
+    animation-duration: 2s; /* You can adjust the duration as needed */
+  }
+  
+  .heroRow {
+    display: flex;
+  }
+  
+  .heroCircle {
+    display: flex;
+    object-fit: contain;
+  }
+  
+  .heroColumn {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .columnLeft {
+    display: flex;
+    flex: 3 1 0;
+  }
+  
+  .columnRight {
+    flex: 1 1 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .heroText {
+    font-size: 70px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    color: #ddff00;
+    max-width: 70%;
+  }
+  
+  .heroSubtext {
+    font-size: 28px;
+    line-height: 36px;
+    color: #ecf0ef;
+    margin-bottom: 40px;
+    font-weight: 500;
+    width: 100%;
+  
+    max-width: 70%;
+  }
+  
+  .heroCTA {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .ctaSpacing {
+    display: flex;
+    width: 10px;
+  }
+  
+  .heroButton {
+    display: flex;
+    justify-content: center;
+    padding: 8px 20px;
+    border-radius: 8px;
+    border: none;
+    background-color: #ddff00;
+    color: #0f1213;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  /* value prop */
+  
+  .valuePropWrapper {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background-color: #1d1f1e;
+  }
+  
+  .valueProp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1310px;
+    width: calc(100% - 80px);
+    padding: 64px 40px;
+    min-height: 60vh;
+  }
+  
+  .valuePropHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .valuePropHeaderText {
+    font-weight: 700;
+    font-size: 50px;
+    margin-bottom: 20px;
+  }
+  
+  .valuePropHeaderSubtext {
+    color: #cdd3d2;
+    font-size: 20px;
+    margin-bottom: 40px;
+    font-weight: 500;
+  }
+  
+  .vpCards {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  .vpCardsRow {
+    display: flex;
+  }
+  
+  .vpCard {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 10px;
+    padding: 40px 30px;
+    transition: transform 0.2s ease-in-out;
+    background-color: #0f1213;
+  }
+  
+  .oneCard {
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .twoCard {
+    display: flex;
+    flex: 1 1 0;
+  }
+  
+  .vpCard:hover {
+    transform: scale(1.02);
+  }
+  
+  .vpCardVisual {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 30px;
+  }
+  
+  .vpCardVisualText {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  
+  .vpCardVisualSubtext {
+    font-size: 16px;
+    color: #cdd3d2;
+    line-height: 22px;
+  }
+  
+  .vpSpacer {
+    display: flex;
+    width: 10px;
+  }
+  
+  /* steps */
+  
+  .stepsWrapper {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background-color: #1d1f1e;
+  }
+  
+  .steps {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1310px;
+    width: calc(100% - 80px);
+    padding: 64px 40px;
+    min-height: 50vh;
+  }
+  
+  .stepsHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .stepsHeaderText {
+    font-weight: 700;
+    font-size: 50px;
+    margin-bottom: 40px;
+  }
+  
+  .sCards {
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .sCard {
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #0f1213;
+    border-radius: 10px;
+    padding: 64px 30px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .sCard:hover {
+    transform: scale(1.02);
+  }
+  
+  .sCardVisual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    background-color: #df0;
+    aspect-ratio: 1 /1;
+  }
+  
+  .sCardText {
+    font-size: 24px;
+    margin-bottom: 10px;
+  
+    font-weight: 600;
+  }
+  
+  .sCardSubtext {
+    font-size: 16px;
+    color: #cdd3d2;
+  
+    line-height: 24px;
+  }
+  
+  .sCardSpacer {
+    display: flex;
+    width: 40px;
+  }
+  
+  /* reminders */
+  
+  .reminderWrapper {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background-color: #1d1f1e;
+    margin: 80px 0;
+  }
+  
+  .reminder {
+    position: relative;
+    display: flex;
+    background-color: #df0;
+    border-radius: 24px;
+    max-width: 1310px;
+    width: calc(100% - 80px * 2);
+    padding: 64px 40px;
+  }
+  
+  .reminderCardHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .reminderCardPreview {
+    display: flex;
+    padding-bottom: 40px;
+    color: #0f1213;
+  }
+  
+  .reminderCardText {
+    font-weight: 700;
+    font-size: 52px;
+    margin-bottom: 10px;
+    color: #0f1213;
+  }
+  
+  .reminderCardSubtext {
+    color: #0f1213;
+    font-size: 18px;
+    margin-bottom: 40px;
+    font-weight: 500;
+  }
+  
+  .reminderCardAction {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .reminderCardButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+    border-radius: 8px;
+    border: none;
+    background-color: black;
+    color: white;
+    align-items: center;
+    cursor: pointer;
+    min-height: 40px;
+  }
+  
+  .cone {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    position: absolute;
+    top: auto;
+    bottom: -30px;
+    left: 50px;
+    right: auto;
+  }
+  
+  .donut {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    position: absolute;
+    top: -40px;
+    bottom: auto;
+    left: auto;
+    right: 170px;
+  }
+  
+  .triangle {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    position: absolute;
+    top: auto;
+    bottom: -51px;
+    left: auto;
+    right: 80px;
+  }
+  
+  .footerSpacer {
+    height: 100px;
+    width: 100%;
+    background-color: #1d1f1e;
+  }
+  
+  /* toasts */
+  
+  .thankYouToast {
+    display: none;
+    position: fixed;
+    bottom: 2%;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+  }
+  
+  .thankYouToastText {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0f1213;
+  }
+  
+  .noEmailToast {
+    display: none;
+    position: fixed;
+    bottom: 2%;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+  }
+  
+  .noEmailToastText {
+    font-size: 14px;
+    font-weight: 700;
+    color: #d5351f;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    input {
+      min-width: 0;
+    }
+  
+    .heroRow {
+      flex-direction: column;
+    }
+  
+    .heroColumn {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .heroText {
+      font-size: 50px;
+      max-width: 100%;
+    }
+  
+    .heroSubtext {
+      max-width: 100%;
+    }
+  
+    .heroCircle {
+      width: 50%;
+    }
+  
+    .heroCTA {
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    .heroButton {
+      height: 50px;
+      margin-top: 10px;
+    }
+  
+    .columnRight {
+      margin-bottom: 40px;
+    }
+  
+    .vpCardsRow {
+      flex-direction: column;
+    }
+  
+    .oneCard {
+      width: auto;
+      margin-bottom: 0;
+    }
+  
+    .vpCard {
+      margin-bottom: 10px;
+    }
+  
+    .sCards {
+      flex-direction: column;
+    }
+  
+    .sCard {
+      margin-bottom: 10px;
+    }
+  
+    .reminderCardAction {
+      flex-direction: column;
+    }
+  
+    .reminderCardInput {
+      margin-bottom: 10px;
+    }
+  
+    .cone {
+      left: 20px;
+      bottom: -50px;
+    }
+  
+    .donut {
+      right: 20px;
+    }
+  
+    .triangle {
+      right: 10px;
+    }
+  }
+  
